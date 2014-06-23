@@ -8,5 +8,5 @@ Npm.depends({
 
 Package.on_use(function (api, where) {
   	api.add_files('wkhtmltopdf.js', 'server');
-  	api.export(['wkhtmltopdf'], 'server');
+  	api.export(['WkHtmlToPdf'], 'server');
 });
