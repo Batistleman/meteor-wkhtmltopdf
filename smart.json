@@ -3,7 +3,7 @@
   "description": "Wkhtml impementation for Meteor apps.",
   "homepage": "https://github.com/Batistleman/meteor-wkhtmltopdf",
   "author": "Batist Leman <batist.leman@gmail.com> (http://antobase.com)",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "git": "https://github.com/Batistleman/meteor-wkhtmltopdf",
   "packages": {}
 }

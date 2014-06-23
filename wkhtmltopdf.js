@@ -1,7 +1,24 @@
-var wkhtmltopdf;
+function WkHtmlToPdf() {};
 
-wkhtmltopdf.prototype.render = Npm.require('wkhtmltopdf');
+WkHtmlToPdf.prototype.writeToStream = function(website, options, stream) {
+	var headers = {
+		'Content-type': 'application/pdf',
+		'Content-Disposition': "attachment; filename=test.pdf"
+	};
 
-wkhtmltopdf.prototype.test = function(){
-	console.log("testing things");
+	stream.writeHead(200, headers);
+
+	var asyncWkHtmlToPdfFunc = function(async_website, async_stream, callback) {
+
+		var wk = Npm.require('wkhtmltopdf');
+		var r = wk(async_website).pipe(async_stream);
+
+		r.on('close', function() {
+			callback(null, "test");
+		});
+	};
+
+	var syncWkHtmlToPdfFunc = Meteor._wrapAsync(asyncWkHtmlToPdfFunc);
+
+	syncWkHtmlToPdfFunc(website, stream);
 };
