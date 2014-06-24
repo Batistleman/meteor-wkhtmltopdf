@@ -22,3 +22,5 @@ WkHtmlToPdf.prototype.writeToStream = function(website, options, stream) {
 
 	syncWkHtmlToPdfFunc(website, stream);
 };
+
+var wkRenderer = new WkHtmlToPdf();
